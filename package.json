@@ -1,0 +1,34 @@
+{
+  "name": "space-invaders",
+  "version": "1.0.0",
+  "description": "Space Invaders game made with JavaScript and Canvas",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "npm": "^6.2.0"
+  },
+  "devDependencies": {
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify-es": "^3.3.0",
+    "imagemin-mozjpeg": "^7.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevendejongnl/Space-Invaders.git"
+  },
+  "author": "Steven de Jong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevendejongnl/Space-Invaders/issues"
+  },
+  "homepage": "https://github.com/stevendejongnl/Space-Invaders#readme"
+}
