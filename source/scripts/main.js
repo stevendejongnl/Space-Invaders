@@ -12,9 +12,11 @@
     };
 
     let speed = 20;
-    let canShoot = true;
 
-    localStorage.setItem('scoreData', JSON.stringify({score: 0, lives: 3}));
+    localStorage.setItem('scoreData', JSON.stringify({
+        score: 0,
+        lives: 3
+    }));
     let scoreData = JSON.parse(localStorage.getItem('scoreData'));
 
     const paths = {
@@ -174,29 +176,10 @@
             return false;
         }
 
-        // if ((event.code === 'ArrowUp' || event.keyCode === 38) && player.y - player.height < (canvas.height - (player.height * 3))) {
-        //     ctx.clearRect(player.x, player.y, player.width, player.height);
-        //     player.y = (canvas.height - (player.height * 3));
-        //     playerRender();
-        //     return false;
-        // }
-        //
-        // if ((event.code === 'ArrowDown' || event.keyCode === 40) && player.y + (player.height * 2) > canvas.height) {
-        //     ctx.clearRect(player.x, player.y, player.width, player.height);
-        //     player.y = canvas.height - player.height;
-        //     playerRender();
-        //     return false;
-        // }
-
         if (event.code === 'Space' || event.keyCode === 32) {
-            if (canShoot) {
-                console.log('Shoot!');
-
-                bulletX = (player.x + (player.width / 2)) - 3;
-                bulletY = player.y - (player.height - (player.height - 25));
-                bulletAnimation();
-            }
-            canShoot = false;
+            bulletX = (player.x + (player.width / 2)) - 3;
+            bulletY = player.y - (player.height - (player.height - 25));
+            bulletAnimation();
             return false;
         }
 
@@ -207,14 +190,6 @@
         if (event.code === 'ArrowRight' || event.keyCode === 39) {
             player.x += speed;
         }
-        // if (event.code === 'ArrowUp' || event.keyCode === 38) {
-        //     for (let currentSpeed = 0; currentSpeed < speed; currentSpeed++)
-        //         player.y -= 1;
-        // }
-        // if (event.code === 'ArrowDown' || event.keyCode === 40) {
-        //     for (let currentSpeed = 0; currentSpeed < speed; currentSpeed++)
-        //         player.y += 1;
-        // }
         playerRender();
     }
 
@@ -254,7 +229,10 @@
                         if (alien.type === 1)
                             scoreData.score += 20;
 
-                        localStorage.setItem('scoreData', JSON.stringify({score: scoreData.score, lives: scoreData.lives}));
+                        localStorage.setItem('scoreData', JSON.stringify({
+                            score: scoreData.score,
+                            lives: scoreData.lives
+                        }));
 
                         ctx.clearRect(0, 0, 50, 50);
                         ctx.fillStyle = 'black';
@@ -270,9 +248,6 @@
                 if (!noHit)
                     break;
             }
-
-            if (!noHit || (bulletY >= 0))
-                canShoot = true;
 
             if (noHit) {
                 ctx.beginPath();
